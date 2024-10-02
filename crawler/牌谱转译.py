@@ -21,7 +21,6 @@ driver = webdriver.Chrome(options=options,service=service)
 driver.get("https://game.maj-soul.com/1/")
 time.sleep(40)
 # 手动登陆雀魂网站
-# 242300983@qq.com
 def execute_script(driver, uuid):
     # JavaScript 脚本与之前控制台中输入的脚本相同
     script = '''
