@@ -73,6 +73,10 @@ https://game.maj-soul.com/1/?paipu=240922-088300ad-2dd7-4faa-9b57-5a69138f7052_a
 
 这些流量是不可解释的，因为它们采用了谷歌提出的`protobuf`编码，对于他们的转译需要拿到《雀魂》的`liqi.proto`文件才可以，这些文件在以往的一些《雀魂》项目中往往可以找到，并且本项目未来也会提供这一文件。但是需要指出的是除了`proto`编码，目前雀魂的websocket数据似乎还经过了某种加密，不再像以前一样可以直接通过proto文件进行解析，因此本项目通过直接观察编码规律实现了一种直接分析不同编码所代表的牌的解析程序。但这样的解析在没有真正破解出加密方式之前，永远是不完全的。
 
+> 待完成：学习解读加密的方法
+>
+> 参考项目：https://github.com/Avenshy/MajsoulMax/blob/main/plugin/helper.py
+
 加密后的格式如下，如果是未加密版本，`ActionDiscardTile\xla\x0e`后应当是`\x08`，代表了这是proto编码中的第一个数据，但这里却是`\x95`
 
 <img src="./assets/image-20241002170402363.png" alt="image-20241002170402363" style="zoom:50%;" />
